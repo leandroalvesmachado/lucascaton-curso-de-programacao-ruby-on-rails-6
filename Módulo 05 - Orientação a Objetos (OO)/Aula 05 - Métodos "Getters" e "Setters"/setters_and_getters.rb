@@ -1,12 +1,7 @@
 class Produto
-
-  # Get
-  attr_reader :fabricante
-  
-  # Set
-  attr_writer :preco
-  
-  attr_accessor :nome
+  attr_reader :fabricante # atributo somente de leitura
+  attr_writer :preco # atributo somente de escrita
+  attr_accessor :nome # ambos leitura e escrita
 
   def initialize
     @fabricante = 'Apple'
@@ -15,4 +10,21 @@ class Produto
 end
 
 celular = Produto.new
-celular.fabricante = 'LG' # tentando chamar o setter
+
+# tentando chamar o setter, dá erro
+# celular.fabricante = 'LG'
+
+# tentando chamar o getter, funcionou
+# puts celular.fabricante
+
+# tentando chamar o setter, funcionou, pois o attr_reader esta somente no fabricante
+# celular.preco = 1000 
+
+# tentando chamar o getter (erro)
+# puts celular.preco
+
+# tentando chamar o setter (funcionou)
+# celular.nome = 'Iphone'
+
+# tentando chamar o getter (funcionou)
+# puts celular.nome
